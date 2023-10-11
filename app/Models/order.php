@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class order extends Model
 {
-    protected $table = 'orders';
+    protected $table = 'order';
 
-    public function items()
-    {
-        return $this->hasMany(item::class);
-    }
+    protected $fillable = ['orderNo', 'orderDate','IsDelete']; 
+    protected $attributes = [
+        'IsDelete' => false,
+    ];
 }

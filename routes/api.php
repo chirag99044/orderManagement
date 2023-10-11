@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('orders', [orderController::class, 'show'])->name('orders.show');
+
