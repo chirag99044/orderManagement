@@ -12,5 +12,5 @@ class order extends Model
     protected $fillable = ['orderNo', 'orderDate','IsDelete']; 
     protected $attributes = [
         'IsDelete' => false,
-    ];
+    ]; 
 }
