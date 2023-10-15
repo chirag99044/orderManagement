@@ -35,18 +35,9 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
                         <input type="date" name="orderDate" id="orderDate" class="form-control">
                     </div>
 
-                    <!-- Grid for displaying items -->
-                    <div class="form-group">
-                        <h2 class="row justify-content-center">Items</h2>
-                        <div class="row">
-                            <div class="col">
-                              <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-                            </div>
-                            <div class="col">
-                              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-                            </div>
-                          </div>
-                    </div>
+                   <!-- Include the Livewire component in your Blade view -->
+                    <livewire:grid-view />
+
 
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Save</button>

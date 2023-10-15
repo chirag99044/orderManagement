@@ -16,9 +16,8 @@ use App\Models\tax;
          */
         public function index()
         {
-            // Retrieve a list of orders
-            // $orders = order::all();
-            // return view('orders.index', ['orders' => $orders]);
+            $products = order::all();
+            return view('create', compact('orders'));
         }
 
         /** 
