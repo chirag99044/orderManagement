@@ -20,9 +20,14 @@ return new class extends Migration
             $table->boolean('IsDelete');
             $table->timestamps();
         });
+        Schema::create('droupdown',function (Blueprint $table){
+            $table->id('droupDownId');
+            $table->string('name');
+        });
         Schema::create('item', function (Blueprint $table) {
             $table->id('itemId');
-            $table->integer('droupDownId');
+            $table->unsignedBigInteger('droupDownId');
+            $table->foreign('droupDownId')->references('droupDownId')->on('droupdown');
             $table->unsignedBigInteger('orderId');
             $table->foreign('orderId')->references('orderId')->on('order');
             $table->integer('itemQty');
@@ -50,8 +55,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order');
-        Schema::dropIfExists('item');
+        Schema::dropIfExists('droupdown');
         Schema::dropIfExists('tax');
+        Schema::dropIfExists('item');
+        Schema::dropIfExists('order');
     }
 };
