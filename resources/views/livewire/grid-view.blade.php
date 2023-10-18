@@ -1,7 +1,7 @@
 <!-- resources/views/livewire/grid-view.blade.php -->
 
 <div>
-    <table class="table">
+    <table class="table" border="1">
         <thead>
             <tr>
                 <th>Item Name</th>
@@ -14,7 +14,17 @@
         <tbody>
             @foreach ($items as $item)
                 <tr>
-                    <td>{{ $item['itemName'] }}</td>
+                    <td>
+                        <select name="itemName">
+                            @foreach ($dropdownValues as $dropdown)
+                                @if ($item->dropDownId == $dropdown->droupDownId)
+                                    <option value="{{ $dropdown->droupDownId }}" selected>{{ $dropdown->name }}</option>
+                                @else
+                                    <option value="{{ $dropdown->droupDownId }}">{{ $dropdown->name }}</option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </td>
                     <td>{{ $item['itemQty'] }}</td>
                     <td>{{ $item['itemRate'] }}</td>
                     <td>{{ $item['tax'] }}</td>
