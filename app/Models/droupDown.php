@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class droupDown extends Model
 {
-    protected $table = 'droupDown';
+    protected $table = 'droupdown';
 }

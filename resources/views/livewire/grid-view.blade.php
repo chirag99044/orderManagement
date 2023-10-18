@@ -16,11 +16,11 @@
                 <tr>
                     <td>
                         <select name="itemName">
-                            @foreach ($dropdownValues as $dropdown)
-                                @if ($item->dropDownId == $dropdown->droupDownId)
-                                    <option value="{{ $dropdown->droupDownId }}" selected>{{ $dropdown->name }}</option>
+                            @foreach ($dropdownValues as $droupdown)
+                                @if ($item['droupDownId'] == $droupdown->droupDownId)
+                                    <option value="{{ $droupdown->droupDownId }}" selected>{{ $droupdown->name }}</option>
                                 @else
-                                    <option value="{{ $dropdown->droupDownId }}">{{ $dropdown->name }}</option>
+                                    <option value="{{ $droupdown->droupDownId }}">{{ $droupdown->name }}</option>
                                 @endif
                             @endforeach
                         </select>
