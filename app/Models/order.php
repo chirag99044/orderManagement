@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class order extends Model
 {
     protected $table = 'order';
+    protected $primaryKey = 'orderId'; 
 
     protected $fillable = ['orderNo', 'orderDate','IsDelete']; 
     protected $attributes = [

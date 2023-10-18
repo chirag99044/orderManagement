@@ -38,7 +38,6 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
                    <!-- Include the Livewire component in your Blade view -->
                     <livewire:grid-view />
 
-
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Save</button>
                     </div>

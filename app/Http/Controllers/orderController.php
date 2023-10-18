@@ -14,11 +14,11 @@ use App\Models\tax;
          *
          * @return \Illuminate\Http\Response
          */
-        public function index()
-        {
-            $products = order::all();
-            return view('create', compact('orders'));
-        }
+            public function index()
+            {
+                $orders = order::all();
+                return view('GetAllorders', compact('orders'));
+            }   
 
         /** 
          * Show the form for creating a new resource.
@@ -54,9 +54,9 @@ use App\Models\tax;
          * @return \Illuminate\Http\Response
          */
         public function show($id)
-        {
-            // $order = Order::find($id);
-            // return view('orders.show', ['order' => $order]);
+        {   
+            $order = Order::find($id);
+            return view('Updateorder', ['order' => $order, 'orderId' => $id]);
         }
 
         /**
