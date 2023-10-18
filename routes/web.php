@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// List all orders
+Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    
+// Show order details
+Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
 
-
+// Create a new order
 Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
 Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 
