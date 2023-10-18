@@ -21,6 +21,6 @@
                     <td>{{ $item['total'] }}</td>
                 </tr>
             @endforeach
-        </tbody> // testing for pull request
+        </tbody> 
     </table>
 </div>
