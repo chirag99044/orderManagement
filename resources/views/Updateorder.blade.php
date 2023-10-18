@@ -15,7 +15,7 @@
                 </div>
 
                <!-- Include the Livewire component in your Blade view -->
-                <livewire:grid-view :orderId="$orderId"/>
+                <livewire:item-view :orderId="$orderId"/>
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Update</button>
