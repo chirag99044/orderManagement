@@ -42,7 +42,7 @@
                     <td>{{ $item['itemQty'] }}</td>
                     <td>{{ $item['itemRate'] }}</td>
                     <td>
-                        <button class="btn btn-primary" wire:click="openPopup({{ $item->itemId }})">View Tax</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#taxDialog">View Tax</button>
                     </td>
                     <td>{{ $item['total'] }}</td>
                 </tr>
@@ -51,14 +51,24 @@
     </table>
 </div>
 
-    @foreach ($items as $item)
-    @php
-        $taxId = item->taxId;     
-    @endphp
-    <!-- Include the tax-popup component outside the loop -->
-    <livewire:tax-popup :taxId="$taxId" />
-    @endforeach
-
+<div class="modal fade" id="taxDialog" tabindex="-1" role="dialog" aria-labelledby="taxDialogTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
     </div>
     
     <!-- Add Bootstrap JS and jQuery scripts at the end of the body for better performance -->
