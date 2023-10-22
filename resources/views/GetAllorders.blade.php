@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,20 +12,47 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-        <div class="container mt-5">
-            <h1 class="mb-4">Order List</h1>
-                @php    
-                    $rowNumber = 1;
-                @endphp
-                @foreach ($orders as $order)
-                    <ul class="list-group-item d-flex justify-content-between align-items-center">
-                        <span class="badge badge-primary badge-pill">{{ $rowNumber++ }}</span>
-                        <a href="{{ route('orders.show', $order->orderId) }}">{{ nl2br($order->orderNo) }}</a>
-                        <span class="badge badge-primary badge-pill">View Details</span>
-                    </ul>
-                @endforeach
-            
+    @extends('layouts.app')
+
+    @section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Dashboard') }}</div>
+    
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+    
+                        <div class="container mt-5">
+                            <h1 class="mb-4">Order List</h1>
+                                @php    
+                                    $rowNumber = 1;
+                                @endphp
+                                @foreach ($orders as $order)
+                                    <ul class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span class="badge badge-primary badge-pill">{{ $rowNumber++ }}</span>
+                                        <a href="{{ route('orders.show', $order->orderId) }}">{{ nl2br($order->orderNo) }}</a>
+                                        <span class="badge badge-primary badge-pill">View Details</span>
+                                    </ul>
+                                @endforeach
+                            
+                        </div>
+                       
+                    </div>  
+                </div>
+            </div>
         </div>
+    </div>
+    @endsection
+    
+    
+
+
 
     <!-- Add Bootstrap JS and jQuery scripts at the end of the body for better performance -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

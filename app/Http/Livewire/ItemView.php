@@ -19,9 +19,4 @@ class itemView extends Component
         $this->items = item::where('orderId', $this->orderId)->get();
         return view('livewire.item-view');
     }
-    public function openPopup($taxId)
-    {
-        $this->taxId = item::find($taxId);
-        return view('livewire.tax-popup ');
-    }
 }
