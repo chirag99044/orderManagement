@@ -2,6 +2,7 @@
 use App\Http\Controllers\OrderController;
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::redirect('/', '/orders');
+
 // List all orders
 Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     
@@ -23,3 +26,4 @@ Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.sh
 Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
 Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 
+Auth::routes();
